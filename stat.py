@@ -14,14 +14,20 @@ for item in L:
     print(item)
 
 print('Min: ', max(L))
-print('Mean: ',sum(L)/(len(L)))
+print('Mean: ', sum(L)/(len(L)))
 print('Max: ', min(L))
 
 christo = 0
 for item in L:
     if L.count(item) > L.count(christo):
         christo = item
-print(christo)
+print('Mode: ', christo)
+
+L.sort()
+if len(L.sort())%2 == 0:
+    print(L[(len(L.sort())/2)-1],L[(len(L.sort())/2)])
+else:
+    print(L[len(L.sort())//2])
 
 
 
