@@ -12,8 +12,10 @@ while True:
 
 for item in L:
     print(item)
-print('The max is:', min(L))
-print('The min is:', max(L))
+
+print('Min: ', max(L))
+print('Mean: ',sum(L)/len(L))
+print('Max: ', min(L))
 
 
 
