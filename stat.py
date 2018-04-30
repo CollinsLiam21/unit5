@@ -13,9 +13,9 @@ while True:
 for item in L:
     print(item)
 
-print('Min: ', max(L))
+print('Min: ', min(L))
 print('Mean: ', sum(L)/(len(L)))
-print('Max: ', min(L))
+print('Max: ', max(L))
 
 christo = 0
 for item in L:
@@ -24,10 +24,10 @@ for item in L:
 print('Mode: ', christo)
 
 L.sort()
-if len(L.sort())%2 == 0:
-    print(L[(len(L.sort())/2)-1],L[(len(L.sort())/2)])
+if len(L)%2 == 0:
+    print('Median: ', L[(len(L)/2)-1],L[(len(L)/2)])
 else:
-    print(L[len(L.sort())//2])
+    print('Median: ', L[len(L)//2])
 
 
 
