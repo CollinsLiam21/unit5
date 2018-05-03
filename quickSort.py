@@ -5,25 +5,28 @@
 from random import randint
 from time import time
 
-N = 1000 #how many numbers will be sorted
+N = 10 #how many numbers will be sorted
 
-def mySort(A):
-    swapped = True
-    while swapped:
-        swapped = False
-        for i in range(0,len(A)-1):
-            if A[i] > A[i+1]:
-                A[i], A[i+1] = A[i+1], A[i]
-                swapped = True
-        if not swapped:
-            break
-        swapped = False
-        for i in range(len(A)-2,-1,-1):
-            if A[i] > A[i+1]:
-                A[i], A[i+1] = A[i+1], A[i]
-                swapped = True
+def mySort(A,lo,hi):
+    if lo < hi:
+        p = partition(A,lo,hi)
+        quicksort(A,lo,hi)
+        quicksort(A,p+1,hi)
+
+def partition(A,lo,hi):
+    pivot = A[lo]
+    i = lo - 1
+    j = hi + 1
+    while True:
+        i = i + 1
+        while A[i] < pivot:
+            j = j - 1
+        while A[j] > pivot:
+            if i >= j:
+                return j
+        A[i], A[j] = A[j], A[i]
         
-    return A
+            
     
 if __name__ == '__main__':
 
@@ -36,8 +39,8 @@ if __name__ == '__main__':
     
     #time how long your sort takes
     t1 = time()
-    #numbers = mySort(numbers)
-    numbers = numbers.sort()
+    numbers = mySort(numbers)
+    #numbers = numbers.sort()
     t2 = time()
     
     #print whether the sort worked or not
