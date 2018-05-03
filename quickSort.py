@@ -10,20 +10,20 @@ N = 10 #how many numbers will be sorted
 def mySort(A,lo,hi):
     if lo < hi:
         p = partition(A,lo,hi)
-        quicksort(A,lo,hi)
-        quicksort(A,p+1,hi)
+        mySort(A,lo,p)
+        mySort(A,p+1,hi)
 
 def partition(A,lo,hi):
     pivot = A[lo]
     i = lo - 1
     j = hi + 1
     while True:
-        i = i + 1
         while A[i] < pivot:
-            j = j - 1
+            i = i + 1
         while A[j] > pivot:
-            if i >= j:
-                return j
+            j = j - 1
+        if i >= j:
+            return j
         A[i], A[j] = A[j], A[i]
         
             
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     
     #time how long your sort takes
     t1 = time()
-    numbers = mySort(numbers)
+    numbers = mySort(numbers, numbers[0], numbers[N-1])
     #numbers = numbers.sort()
     t2 = time()
     
