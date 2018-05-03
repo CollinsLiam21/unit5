@@ -12,8 +12,9 @@ def mySort(A,lo,hi):
         p = partition(A,lo,hi)
         mySort(A,lo,p)
         mySort(A,p+1,hi)
+    return A
 
-def partition(A,lo,hi):
+'''def partition(A,lo,hi):
     pivot = A[lo]
     i = lo - 1
     j = hi + 1
@@ -24,7 +25,19 @@ def partition(A,lo,hi):
             j = j - 1
         if i >= j:
             return j
-        A[i], A[j] = A[j], A[i]
+        A[i], A[j] = A[j], A[i]'''
+
+def partition(A,lo,hi):
+    pivot = A[hi]
+    i = lo -1 
+    j = lo
+    for i in range(j,hi):
+        if A[j] < pivot:
+            i = i + 1
+            A[i], A[j] = A[j], A[i]
+    A[i+1], A[hi] = A[hi], A[i+1]
+    return i+1
+
         
             
     
