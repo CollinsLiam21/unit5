@@ -52,7 +52,7 @@ if __name__ == '__main__':
     
     #time how long your sort takes
     t1 = time()
-    numbers = mySort(numbers[randint(0,N+1)], numbers[0], numbers[N-1])
+    numbers = mySort(numbers, 0, N-1)
     #numbers = numbers.sort()
     t2 = time()
     
