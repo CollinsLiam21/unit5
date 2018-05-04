@@ -7,6 +7,7 @@ from time import time
 
 N = 10 #how many numbers will be sorted
 
+#quicksort function
 def mySort(A,lo,hi):
     if lo < hi:
         p = partition(A,lo,hi)
