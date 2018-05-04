@@ -25,7 +25,7 @@ print('Mode: ', christo)
 
 L.sort()
 if len(L)%2 == 0:
-    print('Median: ', L[(len(L)/2)-1],L[(len(L)/2)])
+    print('Median: ', (L[(len(L)/2)-1] + L[(len(L)/2)])/2)
 else:
     print('Median: ', L[len(L)//2])
 
