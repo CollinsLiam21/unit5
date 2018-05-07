@@ -3,12 +3,13 @@
 #quiz5.py
 
 def penultimate(L):
-    return L[1:]
+    return L[-2]
 
 def plusEquals(L,integer):
+    new = []
     for item in L:
-        item = item + integer
-        return item
+        new.append(item+integer)
+    return new
 
 def smallest(L):
     small = L[0]
